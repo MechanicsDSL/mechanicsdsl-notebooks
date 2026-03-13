@@ -1,0 +1,17 @@
+name: mechanicsdsl-notebooks
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - matplotlib
+  - sympy
+  - h5py
+  - pandas
+  - ipywidgets
+  - jupyterlab
+  - pip
+  - pip:
+    - mechanicsdsl-core
