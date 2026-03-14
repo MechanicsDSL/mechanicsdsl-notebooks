@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use these notebooks in a course or publication, please cite:"
+type: software
+title: "MechanicsDSL Notebooks"
+abstract: >
+  Curated Jupyter notebook collection for the MechanicsDSL computational physics
+  framework, spanning classical mechanics, quantum mechanics, electromagnetism,
+  relativity, statistical mechanics, thermodynamics, and fluid dynamics.
+authors:
+  - family-names: Parsons
+    given-names: Noah
+    orcid: "https://orcid.org/0009-0000-7224-6040"
+    affiliation: "American Forge Institute & Eastern Wyoming College"
+repository-code: "https://github.com/MechanicsDSL/mechanicsdsl-notebooks"
+url: "https://mechanicsdsl.readthedocs.io"
+license: MIT
+date-released: "2026-03-13"
+references:
+  - type: software
+    title: "MechanicsDSL"
+    doi: "10.5281/zenodo.17771040"
+    authors:
+      - family-names: Parsons
+        given-names: Noah
