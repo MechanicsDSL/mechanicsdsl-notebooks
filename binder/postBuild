@@ -1,0 +1,16 @@
+#!/bin/bash
+# postBuild — runs after the Binder environment is built
+# Installs additional Jupyter extensions and configures the environment
+
+set -e
+
+# Enable ipywidgets for interactive sliders
+jupyter nbextension enable --py widgetsnbextension --sys-prefix
+
+# Trust all notebooks so outputs render without re-execution
+for nb in notebooks/*.ipynb; do
+    jupyter trust "$nb"
+    echo "Trusted: $nb"
+done
+
+echo "MechanicsDSL Binder environment ready."
