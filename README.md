@@ -25,6 +25,7 @@ If you're using MechanicsDSL in research, education, industry, or a personal pro
 **[→ Tell us about your use case](https://tally.so/r/XxqOqP)**
 
 *All responses are voluntary and confidential. We will not contact you without permission.*
+
 ---
 
 ## Available Notebooks
