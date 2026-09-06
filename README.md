@@ -26,7 +26,7 @@
 | 04 | [Central Forces](notebooks/04_central_forces.ipynb) | Kepler problem, orbital types, dual Noether conservation | Advanced |
 | 05 | [Hamiltonian Mechanics](notebooks/05_hamiltonian.ipynb) | Phase space, separatrix, symplectic vs RK4 over 500 s | Advanced |
 
-More notebooks in development — see [docs/index.md](docs/index.md) for the full planned curriculum.
+More notebooks in development, see [docs/index.md](docs/index.md) for the full planned curriculum.
 
 ---
 
@@ -93,7 +93,7 @@ MechanicsDSL derives: $H = p_\theta^2/(2ml^2) + mgl(1-\cos\theta)$ and generates
 
 ## For Instructors
 
-Notebooks are designed for direct classroom use — no prior DSL knowledge assumed. Each opens with physics motivation, introduces DSL syntax progressively, and includes interactive parameter exploration. If you use these notebooks in a course, open an issue to be acknowledged in the documentation.
+Notebooks are designed for direct classroom use, no prior DSL knowledge assumed. Each opens with physics motivation, introduces DSL syntax progressively, and includes interactive parameter exploration. If you use these notebooks in a course, open an issue to be acknowledged in the documentation.
 
 ---
 
@@ -125,4 +125,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Domain coverage especially needed: rigid
 
 ## License
 
-MIT License — see [LICENSE](LICENSE).
+MIT License; see [LICENSE](LICENSE).
