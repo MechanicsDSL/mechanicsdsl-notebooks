@@ -15,5 +15,22 @@ Quick start:
 
 from mechanicsdsl_notebooks._version import __version__
 from mechanicsdsl_notebooks._cli import list_notebooks, get_notebook_path
+from mechanicsdsl_notebooks._bridge import (
+    CompiledSystem,
+    CoreNotInstalled,
+    DSLCompileError,
+    compile_spec,
+)
+from mechanicsdsl_notebooks._generate import build_notebook, code_cell_sources
 
-__all__ = ["__version__", "list_notebooks", "get_notebook_path"]
+__all__ = [
+    "__version__",
+    "list_notebooks",
+    "get_notebook_path",
+    "compile_spec",
+    "build_notebook",
+    "code_cell_sources",
+    "CompiledSystem",
+    "CoreNotInstalled",
+    "DSLCompileError",
+]
