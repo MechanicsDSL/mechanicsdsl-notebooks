@@ -21,7 +21,9 @@ from mechanicsdsl_notebooks._bridge import (
     DSLCompileError,
     compile_spec,
 )
-from mechanicsdsl_notebooks._generate import build_notebook, code_cell_sources
+from mechanicsdsl_notebooks._bridge import list_presets
+from mechanicsdsl_notebooks._execute import NotebookExecutionError, execute_notebook
+from mechanicsdsl_notebooks._generate import SECTIONS, build_notebook, code_cell_sources
 
 __all__ = [
     "__version__",
@@ -30,6 +32,10 @@ __all__ = [
     "compile_spec",
     "build_notebook",
     "code_cell_sources",
+    "execute_notebook",
+    "NotebookExecutionError",
+    "SECTIONS",
+    "list_presets",
     "CompiledSystem",
     "CoreNotInstalled",
     "DSLCompileError",

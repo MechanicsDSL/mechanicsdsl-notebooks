@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mechanicsdsl-notebooks"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Curated Jupyter notebooks for MechanicsDSL — classical mechanics, quantum, electromagnetism, relativity, statistical mechanics"
 readme = "README.md"
 license = { text = "MIT" }
@@ -26,14 +26,14 @@ classifiers = [
 ]
 requires-python = ">=3.9"
 dependencies = [
-  "mechanicsdsl-core[jupyter]",
+  "mechanicsdsl-core[jupyter]>=2.1.4",
   "numpy>=1.24",
   "scipy>=1.10",
   "matplotlib>=3.7",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=7.0", "nbconvert", "nbformat", "ruff"]
+dev = ["pytest>=7.0", "pytest-cov", "nbconvert", "nbformat", "ruff"]
 
 [project.scripts]
 mechanicsdsl-notebooks = "mechanicsdsl_notebooks.cli:main"
@@ -42,6 +42,9 @@ mechanicsdsl-notebooks = "mechanicsdsl_notebooks.cli:main"
 Homepage = "https://github.com/MechanicsDSL/mechanicsdsl-notebooks"
 Binder = "https://mybinder.org/v2/gh/MechanicsDSL/mechanicsdsl-notebooks/main"
 DOI = "https://doi.org/10.5281/zenodo.17771040"
+
+[tool.hatch.version]
+path = "src/mechanicsdsl_notebooks/_version.py"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/mechanicsdsl_notebooks"]

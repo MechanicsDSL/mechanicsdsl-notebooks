@@ -45,7 +45,7 @@ def get_notebook_path(name: str) -> Optional[Path]:
     if nb_dir.exists():
         return nb_dir / _NOTEBOOKS[name]
     # Local clone
-    repo_root = pkg_dir.parent.parent.parent.parent
+    repo_root = pkg_dir.parent.parent
     local = repo_root / "notebooks" / _NOTEBOOKS[name]
     if local.exists():
         return local

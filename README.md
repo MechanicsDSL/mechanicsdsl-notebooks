@@ -72,22 +72,37 @@ mechanicsdsl-notebooks/
 
 ---
 
-## What MechanicsDSL Does in Each Notebook
+## Curated vs generated notebooks
 
-Every notebook includes the DSL specification that the MechanicsDSL compiler uses to automatically:
-- Derive equations of motion via the Euler-Lagrange equations symbolically
-- Identify conserved quantities via Noether's theorem
-- Generate NumPy, JAX, or other backend simulation code
+The five curated notebooks above are hand-written SciPy walkthroughs of the
+physics: they show the DSL specification for each system but integrate their
+own equations of motion. Notebooks *generated* by this package go through
+`mechanicsdsl-core` end to end: the DSL is compiled, the equations of motion
+are derived symbolically, and the system is integrated by core.
 
-Example from Notebook 05:
+## Generate notebooks from any DSL spec
+
+```bash
+pip install mechanicsdsl-notebooks
+mechanicsdsl-notebooks generate double_pendulum -o notebooks/
+mechanicsdsl-notebooks generate double_pendulum --sections all --execute -o notebooks/
+mechanicsdsl-notebooks generate my_system.msl --sections phase,energy,sweep --sweep k
+mechanicsdsl-notebooks build-all --sections all --execute -o gallery/
+mechanicsdsl-notebooks check notebooks/*.ipynb
 ```
-\system{pendulum_hamiltonian}
-\parameter{m}{1.0}{kg}
-\parameter{l}{1.0}{m}
-\lagrangian{0.5*m*l^2*\dot{theta}^2 - m*g*l*(1-cos(theta))}
-\target{python_numpy}
-```
-MechanicsDSL derives: $H = p_\theta^2/(2ml^2) + mgl(1-\cos\theta)$ and generates Hamilton's equations automatically.
+
+| Section | Contents |
+|---------|----------|
+| `overview` (always) | DSL, derived equations of motion, core integration, trajectory plot |
+| `phase` | phase portraits (q vs q̇) for every coordinate |
+| `energy` | E = Σ q̇ ∂L/∂q̇ − L derived symbolically, energy and relative-drift plots |
+| `sweep` | one parameter scaled 0.5×–1.5×, trajectories overlaid |
+| `integrators` | core's RK45 / RK23 / DOP853 / LSODA against a tight reference: error and wall time |
+
+`--execute` runs the notebook headlessly (no Jupyter needed) and stores text
+and figure outputs, so the `.ipynb` renders with results on GitHub.
+`check` executes existing notebooks the same way and reports any cell errors.
+`build-all` writes one notebook per core preset plus a `README.md` index.
 
 ---
 
@@ -100,9 +115,9 @@ Notebooks are designed for direct classroom use, no prior DSL knowledge assumed.
 ## Testing
 
 ```bash
-pip install pytest nbconvert
-python scripts/check_notebooks.py       # execute all notebooks
-pytest tests/ -v                        # validate structure
+pip install -e ".[dev]"
+mechanicsdsl-notebooks check notebooks/*.ipynb   # execute all curated notebooks headlessly
+pytest tests/ -v                                 # structure + every generated section executed
 ```
 
 ---
